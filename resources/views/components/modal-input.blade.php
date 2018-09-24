@@ -1,29 +1,42 @@
 <script lang="javascript">
+
     function preencheFuncionalidade(){
         const opcao = JSON.parse($("#select-funcionalidade").val())
         $('#id-funcionalidade').val(opcao.id)
         $('#nome-funcionalidade').val(opcao.nome)
         $('#descricao-funcionalidade').val(opcao.descricao)
-        $('#preco-funcionalidade').val(opcao.valor)
+        $('#valor-funcionalidade').val(opcao.valor)
+        return false
     }
 
     function addFuncionalidade(){
         let temp = JSON.parse($("#funcionalidades").val())
-        const novaFunc = {
+        const func = {
             nome: $('#nome-funcionalidade').val(),
             descricao: $('#descricao-funcionalidade').val(),
-            preco: $('#preco-funcionalidade').val()
+            valor: $('#valor-funcionalidade').val()
         }
-        $("#funcionalidades").val(JSON.stringify([novaFunc,...temp]))
-        $("#table").append(`
-           <tr>
-                <td> ${novaFunc.nome} </td>
-                <td> ${novaFunc.preco} </td>
-                <td> ${novaFunc.descricao} </td>
-           </tr>
-        `)
+        $("#funcionalidades").val(JSON.stringify([func,...temp]))
+        appendTable(func)
         $("#nova-funcionalidade").modal("hide")
     }
+    function appendTable(func){
+        $("#table").append(`
+           <tr>
+                <td> ${func.nome} </td>
+                <td> ${parseFloat(func.valor).toFixed(2)} </td>
+                <td> ${func.descricao} </td>
+           </tr>
+        `)
+    }
+    $(document).ready(function(e){
+        appendTable(@json($funcionalidades[0]))
+        appendTable(@json($funcionalidades[2]))
+        let temp = JSON.parse($("#funcionalidades").val())
+        $("#funcionalidades").val(JSON.stringify([@json($funcionalidades[0]),...temp]))
+        temp = JSON.parse($("#funcionalidades").val())
+        $("#funcionalidades").val(JSON.stringify([@json($funcionalidades[3]),...temp]))
+    })
 </script>
 
 <div id="nova-funcionalidade" class="ui tiny modal">
@@ -34,9 +47,11 @@
         <div class="ui form">
             <div class="ui field">
                 <label>Tipo</label>
-                <select id="select-funcionalidade">
+                <select id="select-funcionalidade" onselect="preencheFuncionalidade(); return false;">
                     @foreach( $funcionalidades as $opcao)
-                        <option value="{{$opcao}}"> {{ $opcao->nome }} </option>
+                        @if($opcao->id != 1 && $opcao->id != 3)
+                            <option value="{{$opcao}}"> {{ $opcao->nome }} </option>
+                        @endif                            
                     @endforeach
                 </select>
             </div>
@@ -56,7 +71,7 @@
             </div>
             <div class="ui field focus">
                     <label>Preço</label>
-                    <input id="preco-funcionalidade" type="number" step="any" placeholder="Preço da funcionalidade"/>
+                    <input id="valor-funcionalidade" type="number" step="any" placeholder="Preço da funcionalidade"/>
                 </div>
             <input type="hidden" name="funcionalidades" id="funcionalidades" value="[]"/>
         </div>

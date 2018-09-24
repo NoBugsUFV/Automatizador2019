@@ -1,5 +1,7 @@
 @include("links")
-
+<head>
+    <title> Gerar novo PESw </title>
+<head>
 <div id="cabecalho"></div>
 <div class="ui centered container">
     <button class="ui labeled icon button" onclick="$('#nova-funcionalidade').modal('show')">
@@ -16,7 +18,6 @@
             </tr>
         </thead>
         <tbody id="table">
-
         </tbody>
     <table>
 </div>
