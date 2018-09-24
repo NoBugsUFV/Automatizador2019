@@ -15,4 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/funcionalidades',"FuncionalidadesController@index");
+Route::prefix("pesw")->group(function(){ 
+    Route::get('/gerador',"FuncionalidadesController@index");
+});
