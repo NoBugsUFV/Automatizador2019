@@ -10,7 +10,8 @@ class PDFController extends Controller
 {
     public function pdf(Request $req) {
         $funcionalidades = json_decode($req->input("funcionalidades"));
-        $pdf = PDF::loadView("pages.pesw.pdf",compact("funcionalidades"));
-        return $pdf->stream("funcionalidades.pdf");            
+        $cliente = $req->input("cliente");
+        $pdf = PDF::loadView("pages.pesw.pdf",compact("funcionalidades","cliente"));
+        return $pdf->stream("PESw - Site para $cliente.pdf");            
     }
 }
