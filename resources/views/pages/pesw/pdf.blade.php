@@ -25,11 +25,11 @@
 			</tr>
 		</thead>
 		<tbody>
-			@foreach ($funcionalidades as $key => $funcionalidade)
+			@foreach ($funcionalidades as $funcionalidade)
 			<tr>
-				<td data-label="nome">{{ $funcionalidade->nome }}</td>
-				<td>{{ $funcionalidade->valor }}</td>
-				<td>{{ $funcionalidade->descricao }}</td>
+				<td data-label="Nome">{{ $funcionalidade->nome }}</td>
+				<td data-label="Valor">{{ $funcionalidade->valor }}</td>
+				<td data-label="Descrição">{{ $funcionalidade->descricao }}</td>
 			</tr>
 			@endforeach
 		</tbody>

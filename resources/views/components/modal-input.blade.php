@@ -33,6 +33,7 @@
                     Completar
                 </button>
             </div>
+            <input hidden id="id-funcionalidade" type="number"/>
             <div class="ui field focus">
                 <label>Nome</label>
                 <input id="nome-funcionalidade" placeholder="Nome da funcionalidade"/>
@@ -45,7 +46,6 @@
                     <label>Preço</label>
                     <input id="valor-funcionalidade" type="number" step="any" placeholder="Preço da funcionalidade"/>
                 </div>
-            <input type="hidden" name="funcionalidades" id="funcionalidades" value="[]"/>
         </div>
     </div>
     <div class="actions">

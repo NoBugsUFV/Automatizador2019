@@ -6,6 +6,7 @@
 <div class="ui centered container">
     <form action="/pesw/pdf" method="POST" target="_blank">
         @csrf
+        <input type="hidden" name="funcionalidades" id="funcionalidades" value="[]"/>
         <div class="ui labeled icon button" onclick="$('#nova-funcionalidade').modal('show')">
             <i class="plus icon"></i>
             Acrescentar funcionalidade
