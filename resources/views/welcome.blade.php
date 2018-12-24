@@ -25,7 +25,7 @@
     </head>
     <body>
         <div class="ui center aligned container">
-            <img src=" {{ URL::asset("img/header_branco.png") }} " width="50%"/>
+            <img src=" {{ URL::asset('img/header_branco.png') }} " width="50%"/>
             <div class="ui centered card">
                 <div class="center aligned content">
                     <p class="header"> Login </p>

@@ -1,4 +1,4 @@
-<script type="text/javascript" src="{{ URL::asset("js/funcionalidades.js")}}"></script>
+<script type="text/javascript" src="{{ URL::asset('js/funcionalidades.js')}}"></script>
 
 <script type="text/javascript">
     $(document).ready(function(e){
@@ -7,7 +7,7 @@
         let temp = JSON.parse($("#funcionalidades").val())
         $("#funcionalidades").val(JSON.stringify([@json($funcionalidades[0]),...temp]))
         temp = JSON.parse($("#funcionalidades").val())
-        $("#funcionalidades").val(JSON.stringify([@json($funcionalidades[3]),...temp]))
+        $("#funcionalidades").val(JSON.stringify([@json($funcionalidades[2]),...temp]))
     })
 </script>
 

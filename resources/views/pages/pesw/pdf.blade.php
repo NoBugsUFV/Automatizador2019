@@ -2,25 +2,17 @@
 <head>
 	<title> PESw - {{ $cliente }}</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
+	<link rel="stylesheet" href="{{ public_path('css/pdf.css') }}" media="all" type="text/css" />
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
-	<style>
-		body {
-			align-content: center;
-			align-items: center;
-			align-content: center;
-			background-color: transparent;
-			page-break-inside: avoid; 
-		}
-		table {
-			align-self: center !important;
-		}
-		.page {
-			align-items: center;
-		}
-	</style>
 </head>
-<body class="ui center aligned container">
+<body>
+	<header></header>
+	<footer>
+		Rodapé experimental
+	</footer>
+	<main class="ui center aligned container">
+	@include('pages.pesw.capa')
 	<table class="ui celled table table-bordered">
 		<thead>
 			<tr>
@@ -39,5 +31,6 @@
 			@endforeach
 		</tbody>
 	</table>
+</main>
 </body>
 </html>

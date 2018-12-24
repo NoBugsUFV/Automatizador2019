@@ -21,6 +21,7 @@ function addFuncionalidade(){
     $("#nova-funcionalidade").modal("hide")
     console.log(JSON.parse($("#funcionalidades").val()))
 }
+
 function appendTable(func){
     $("#table").append(`
         <tr>
