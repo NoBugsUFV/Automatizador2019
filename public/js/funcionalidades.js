@@ -1,9 +1,9 @@
 function preencheFuncionalidade(){
     const opcao = JSON.parse($("#select-funcionalidade").val())
     $('#id-funcionalidade').val(opcao.id)
-    $('#nome-funcionalidade').val(opcao.nome)
-    $('#valor-funcionalidade').val(opcao.valor)
-    $('#descricao-funcionalidade').val(opcao.descricao)
+    $('#nome-funcionalidade').val(opcao.name)
+    $('#valor-funcionalidade').val(opcao.value)
+    $('#descricao-funcionalidade').val(opcao.description)
     return false
 }
 
@@ -25,9 +25,9 @@ function addFuncionalidade(){
 function appendTable(func){
     $("#table").append(`
         <tr>
-            <td> ${func.nome} </td>
-            <td> ${parseFloat(func.valor).toFixed(2)} </td>
-            <td> ${func.descricao} </td>
+            <td> ${func.name} </td>
+            <td> ${parseFloat(func.value).toFixed(2)} </td>
+            <td> ${func.description} </td>
         </tr>
     `)
 }

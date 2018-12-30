@@ -22,7 +22,7 @@
                 <select id="select-funcionalidade" onselect="preencheFuncionalidade(); return false;">
                     @foreach( $funcionalidades as $opcao)
                         @if($opcao->id != 1 && $opcao->id != 3)
-                            <option value="{{$opcao}}"> {{ $opcao->nome }} </option>
+                            <option value="{{$opcao}}"> {{ $opcao->name }} </option>
                         @endif                            
                     @endforeach
                 </select>

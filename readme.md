@@ -1,6 +1,5 @@
 # Automatizador 2.0
 
-
 ## Requisitos
 
 ### Locais
@@ -25,6 +24,39 @@ $ yaourt -S composer
     sudo apt-get install php-gd
 ```
 
+## Modelagem
+
+Seguem abaixo a definição dos modelos para a Base de Dados, com
+seus respectivos atributos e tipos.
+
+### Usuário
+
+Tabela: `users`
+
+```json
+{
+    "id": "INTEGER AUTOINCREMENT",
+    "name": "STRING",
+    "username": "STRING UNIQUE",
+    "email": "STRING UNIQUE",
+    "password": "STRING",
+    "email_verified_at": "TIMESTAMP"
+}
+```
+
+### Funcionalidades
+
+Tabela: `products`
+
+```json
+{
+    "id": "INTEGER AUTOINCREMENT",
+    "name": "STRING",
+    "value": "DOUBLE",
+    "description": "STRING"
+}
+
+```
 
 ## Rotas
 
@@ -47,7 +79,7 @@ do documento.
 
 `GET /api/funcionalidades`
 
-Retorna todos as funcionalidades cadastradas no sistema.
+Retorna todas as funcionalidades cadastradas no sistema.
 
 **`GET /api/token/{id}`**
 

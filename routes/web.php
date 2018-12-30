@@ -16,6 +16,6 @@ Route::get('/', function () {
 });
 
 Route::prefix("pesw")->group(function(){ 
-    Route::get('/funcionalidades',"FuncionalidadesController@index");
+    Route::get('/funcionalidades',"ProductController@index");
     Route::post('/pdf', "PDFController@pdf");
 });

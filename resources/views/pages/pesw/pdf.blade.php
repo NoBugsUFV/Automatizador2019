@@ -24,9 +24,9 @@
 		<tbody>
 			@foreach ($funcionalidades as $funcionalidade)
 			<tr>
-				<td data-label="Nome">{{ $funcionalidade->nome }}</td>
-				<td data-label="Valor">{{ $funcionalidade->valor }}</td>
-				<td data-label="Descrição">{{ $funcionalidade->descricao }}</td>
+				<td data-label="Nome">{{ $funcionalidade->name }}</td>
+				<td data-label="Valor">{{ $funcionalidade->value }}</td>
+				<td data-label="Descrição">{{ $funcionalidade->description }}</td>
 			</tr>
 			@endforeach
 		</tbody>

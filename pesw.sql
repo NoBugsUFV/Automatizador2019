@@ -16,7 +16,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 
-INSERT INTO `funcionalidades` (`id`,`nome`, `valor`, `descricao`) VALUES
+INSERT INTO `products` (`id`,`name`, `value`, `description`) VALUES
 (1,'Fundação', '490.0000', 'Definição de template (modelo de layout) e menu para acesso às páginas.'),
 (2,'Eventos', '100.0000', 'Sistema que permite a postagem de eventos na forma de notícias, podendo dividi-los em áreas'),
 (3,'Custo do Desenvolvedor', '300.0000', 'Valor simbólico de horas gastas no desenvolvimento.'),
