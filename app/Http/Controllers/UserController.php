@@ -18,7 +18,7 @@ class UserController extends Controller
     public function register(Request $req)
     {
         if (!$req->has(["name", "username", "email", "password"])) {
-            return response("Você não forneceu todos os dados necessários para registro. Preencha-os corretamente e tente novamente",400);
+            return response("Você não forneceu todos os dados necessários para registro. Preencha-os corretamente e tente novamente", 400);
         } else {
             try {
                 $user = User::create([
@@ -27,9 +27,9 @@ class UserController extends Controller
                     "email" => $req->input("email"),
                     "password" => hash("sha256", $req->input("password")),
                 ]);
-                return response($user,200);
+                return response($user, 200);
             } catch (ErrorException $err) {
-                
+
             }
         }
     }
@@ -37,12 +37,15 @@ class UserController extends Controller
     public function login(Request $req)
     {
         if (!$req->has(["user", "password"])) {
-            return response("Você não preencheu todos os campos necessários. Preencha-os e tente novamente",400);
+            return response("Você não preencheu todos os campos necessários. Preencha-os e tente novamente", 400);
         } else {
             $user = $req->input("user");
-            $pswd = hash("sha256",$req->input("password"));
-            $query = User::whereRaw("email='{$user}' AND password='{$pswd}'");
-            return response()->json($query->get());
+            $pswd = hash("sha256", $req->input("password"));
+            $query = User::whereRaw("email='{$user}' OR username='{$user}' AND password='{$pswd}'");
+            $data = $query->first();
+            $token = array("data" => JWTAuth::fromUser($data), "expires" => "Wed");
+            $data["token"] = $token;
+            return response()->json($data);
         }
     }
     // Método pra testar a gereção de token

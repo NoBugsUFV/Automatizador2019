@@ -102,6 +102,7 @@ Caso o login seja bem sucedido, a API retorna os seguintes dados:
     "token": {
         "data": "#########",
         "expires": "1969-12-31T23:59:59.000Z" // token único do usuário
+    }
 }
 ```
 
