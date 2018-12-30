@@ -81,6 +81,30 @@ do documento.
 
 Retorna todas as funcionalidades cadastradas no sistema.
 
+``GET /api/login`
+
+Para fazer o login, é necessário fornecer os dados abaixo:
+
+```json
+{
+    "user": "gub.nobugs", // e-mail ou nome de usuário
+    "password": "123456"
+}
+```
+
+Caso o login seja bem sucedido, a API retorna os seguintes dados:
+
+```json
+{
+    "name": "Gub dinus",
+    "username": "gub.nobugs",
+    "email": "gub@nobugs.com.br",
+    "token": {
+        "data": "#########",
+        "expires": "1969-12-31T23:59:59.000Z" // token único do usuário
+}
+```
+
 **`GET /api/token/{id}`**
 
 Retorna o `token` de um usuário através do id. Deve ser usada para recuperar o token
