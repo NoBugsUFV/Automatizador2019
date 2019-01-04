@@ -7,30 +7,32 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
 </head>
 <body>
-	<header></header>
-	<footer>
-		Rodapé experimental
-	</footer>
 	<main class="ui center aligned container">
 	@include('pages.pesw.capa')
-	<table class="ui celled table table-bordered">
-		<thead>
-			<tr>
-				<th>Nome</th>
-				<th>Valor</th>
-				<th>Descrição</th>
-			</tr>
-		</thead>
-		<tbody>
-			@foreach ($funcionalidades as $funcionalidade)
-			<tr>
-				<td data-label="Nome">{{ $funcionalidade->name }}</td>
-				<td data-label="Valor">{{ $funcionalidade->value }}</td>
-				<td data-label="Descrição">{{ $funcionalidade->description }}</td>
-			</tr>
-			@endforeach
-		</tbody>
-	</table>
+	<div class="page">
+		<header></header>
+		<footer>
+			Rodapé experimental
+		</footer>
+		<table class="ui celled table table-bordered">
+			<thead>
+				<tr>
+					<th>Nome</th>
+					<th>Valor</th>
+					<th>Descrição</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach ($funcionalidades as $funcionalidade)
+				<tr>
+					<td data-label="Nome">{{ $funcionalidade->name }}</td>
+					<td data-label="Valor">{{ $funcionalidade->value }}</td>
+					<td data-label="Descrição">{{ $funcionalidade->description }}</td>
+				</tr>
+				@endforeach
+			</tbody>
+		</table>
+	</div>
 </main>
 </body>
 </html>

@@ -1,13 +1,9 @@
-html {
+html, body {
     width: 100%;
     max-width: 100%;
     margin: 0;
     padding: 0;
-}
-
-body {
-    margin: 3cm 2cm 2cm 3cm;
-    background-color: transparent ;
+    background-color: transparent;
 }
 
 main {
@@ -25,6 +21,7 @@ table {
 
 .page {
     align-items: center;
+    page-break-after: always;
 }
 
 header {
@@ -62,10 +59,7 @@ footer {
 .capa, .page {
     /* Quebra de página ao fim da capa/página */
     page-break-after: always;
-}
-
-.capa > header,footer {
-    display: none
+    margin: 3cm 2cm 3cm 2cm;
 }
 
 .title {
