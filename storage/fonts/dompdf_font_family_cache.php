@@ -80,4 +80,7 @@
   'icons' => array(
     'normal' => $fontDir . '/470d5776c65d903f2d8e223531013af1',
   ),
+  'josefin sans' => array(
+    'normal' => $fontDir . '/dfa2765f105545529e7668349931f8cb',
+  ),
 ) ?>
