@@ -18,7 +18,7 @@
 			<div>
 				<div class="paragraph">
 					<div class="title">
-						1.Descrição do Documento
+						1. Descrição do Documento
 					</div>
 					<div class="content">
 						Esse documento tem como objetivo definir preço, 
@@ -28,7 +28,7 @@
 				</div>
 			</div>
 			<div class="paragraph">
-				<div class="title"> 2.Visão Geral do produto</div>
+				<div class="title"> 2. Visão Geral do Produto</div>
 				<div class="content">
 					{{ $visao }}
 				</div>

@@ -11,9 +11,9 @@ function addFuncionalidade(){
     let temp = JSON.parse($("#funcionalidades").val())
     const func = {
         id: parseInt($("#id-funcionalidade").val()),
-        nome: $('#nome-funcionalidade').val(),
-        valor: parseInt($('#valor-funcionalidade').val()).toFixed(2),
-        descricao: $('#descricao-funcionalidade').val(),
+        name: $('#nome-funcionalidade').val(),
+        value: parseInt($('#valor-funcionalidade').val()).toFixed(2),
+        description: $('#descricao-funcionalidade').val(),
     }
     temp.unshift(func)
     $("#funcionalidades").val(JSON.stringify(temp))
