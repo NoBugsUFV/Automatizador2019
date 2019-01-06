@@ -75,6 +75,27 @@ modificadas.
 Rota que gera o PDF da Proposta, recebendo os dados necessários para construção
 do documento.
 
+Dados:
+
+```json
+{
+    "cliente": "Gub da Silva",
+    "descricao": "Site para Gub da Silva, melhor mascote do mundo",
+    "funcionalidades" : [], // Arranjo com as funcionalidades desejadas,
+    "data" : "1969-12-17",
+    "validade": "1969-12-31"
+}
+```
+Para gerar um pdf, é necessário estar autenticado e fornecer o token do usuário
+no `body` da requisição
+
+```json
+{
+    // Dados anteriores
+    "token" : "" // Token do usuário
+}
+```
+
 ### API
 
 `GET /api/funcionalidades`

@@ -51,6 +51,6 @@ class UserController extends Controller
     // Método pra testar a gereção de token
     public function getToken(Request $req, $id)
     {
-        return JWTAuth::fromUser(User::where("id", $id)->first());
+        return response()->json(JWTAuth::fromUser(User::where("id", $id)->first()),200);
     }
 }
