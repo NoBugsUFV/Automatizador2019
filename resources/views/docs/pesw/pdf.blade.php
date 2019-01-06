@@ -30,7 +30,7 @@
 			<div class="paragraph">
 				<div class="title"> 2.Visão Geral do produto</div>
 				<div class="content">
-					{{ $descricao }}
+					{{ $visao }}
 				</div>
 			</div>
 			

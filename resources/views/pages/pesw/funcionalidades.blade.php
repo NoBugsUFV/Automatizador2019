@@ -39,8 +39,9 @@
                 </div>
             </div>
             <div class="ui field">
-                <label> Descrição </label>
-                <textarea rows="5" id="descricao" name="descricao" type="text" placeholder="Descrição do Projeto"></textarea>
+                <label> Visão Geral do Produto </label>
+                <textarea rows="5" id="visao" name="visao" type="text" 
+                    placeholder="Escreva aqui a visão geral do Produto"></textarea>
             </div>
             <div class="ui centered">
                 <button class="ui labelled icon button" type="submit">
