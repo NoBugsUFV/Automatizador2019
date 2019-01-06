@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 	<title> PESw - {{ $cliente }}</title>
@@ -9,10 +10,10 @@
 </head>
 <body>
 	<main class="ui center aligned container">
-	@include('pages.pesw.capa')
+	@include('docs.pesw.capa')
 	<div class="page">
-		@include("pages.pesw.header")
-		@include("pages.pesw.footer")
+		@include("docs.pesw.header")
+		@include("docs.pesw.footer")
 		<div>
 			<div>
 				<div class="paragraph">
@@ -29,13 +30,13 @@
 			<div class="paragraph">
 				<div class="title"> 2.Visão Geral do produto</div>
 				<div class="content">
-					Testando paragrafo novo
+					{{ $descricao }}
 				</div>
 			</div>
 			
 		</div>
 		<div>
-			<table class="ui celled table table-bordered">
+			<table class="ui celled large table table-bordered">
 				<thead>
 					<tr>
 						<th>Nome</th>

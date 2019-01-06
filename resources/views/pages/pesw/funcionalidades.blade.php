@@ -30,13 +30,17 @@
                     <input id="cliente" name="cliente" type="text" placeholder="Nome do cliente"/>
                 </div>
                 <div class="ui field">
-                        <label> Data </label>
-                        <input id="data" name="data" type="date" value="{{ date("Y-m-d")}}"/>
+                    <label> Data </label>
+                    <input id="data" name="data" type="date" value="{{ date("Y-m-d")}}"/>
                 </div>
                 <div class="ui field">
-                        <label> Validade (em dias) </label>
-                        <input id="validade" name="validade" type="number" value="7"/>
+                    <label> Validade (em dias) </label>
+                    <input id="validade" name="validade" type="number" value="7"/>
                 </div>
+            </div>
+            <div class="ui field">
+                <label> Descrição </label>
+                <textarea rows="5" id="descricao" name="descricao" type="text" placeholder="Descrição do Projeto"></textarea>
             </div>
             <div class="ui centered">
                 <button class="ui labelled icon button" type="submit">

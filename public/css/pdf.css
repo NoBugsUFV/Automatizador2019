@@ -12,6 +12,15 @@ table {
     margin-top: 30px !important;
 }
 
+
+th {
+    font-size: 25px;
+}
+
+td {
+    font-size: 20px;
+}
+
 .page {
     align-items: center;
     page-break-after: always;
