@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::prefix("pesw")->group(function(){ 
-    Route::get('/funcionalidades',"ProductController@index");
-    Route::post('/pdf', "PDFController@pdf");
+    Route::get('/funcionalidades',"ProductController@index"); // View para gerar o PDF
+    Route::post('/history/{id}', "PDFController@fromBackup"); // Gera o PDF a partir do Histórico salvo
+    Route::post('/pdf', "PDFController@pdfPESw"); // Gera o PDF pelos dados fornecidos
 });

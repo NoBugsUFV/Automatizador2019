@@ -23,7 +23,7 @@
 					<div class="content">
 						Esse documento tem como objetivo definir preço, 
 						prazo e o escopo para a realização do projeto de
-						criação do site para {{ $cliente }}
+						criação de um site para {{ $cliente }}
 					</div>
 				</div>
 			</div>

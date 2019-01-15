@@ -16,6 +16,8 @@ use Illuminate\Http\Request;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get("/user","UserController@index");
+Route::get("/history","HistoryController@index");
 Route::get("/funcionalidades","ProductController@getAll");
 Route::get("/token/{id}","UserController@getToken");
 Route::get("/login","UserController@login");

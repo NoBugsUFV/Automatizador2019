@@ -13,7 +13,7 @@ class UserController extends Controller
 {
     public function index(Request $req)
     {
-        return response()->json(User::all());
+        return response()->json(User::all()->first->get()->verified);
     }
     public function register(Request $req)
     {
