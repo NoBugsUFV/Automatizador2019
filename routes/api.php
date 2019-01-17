@@ -19,6 +19,6 @@ Route::get('/', function () {
 Route::get("/user","UserController@index");
 Route::get("/history","HistoryController@index");
 Route::get("/funcionalidades","ProductController@getAll");
-Route::get("/token/{id}","UserController@getToken");
-Route::get("/login","UserController@login");
+Route::get("/token/{token}","UserController@byToken");
+Route::post("/login","UserController@login");
 

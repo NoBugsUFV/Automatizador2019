@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Database\QueryException;
+
 
 //Importando Model de usuários
 use JWTAuth;
-use Whoops\Exception\ErrorException;
-
 class UserController extends Controller
 {
     public function index(Request $req)
@@ -36,21 +36,40 @@ class UserController extends Controller
     // Método para autenticação
     public function login(Request $req)
     {
-        if (!$req->has(["user", "password"])) {
+        if (!$req->json()->has("user","password")) {
             return response("Você não preencheu todos os campos necessários. Preencha-os e tente novamente", 400);
         } else {
-            $user = $req->input("user");
-            $pswd = hash("sha256", $req->input("password"));
-            $query = User::whereRaw("email='{$user}' OR username='{$user}' AND password='{$pswd}'");
-            $data = $query->first();
-            $token = array("data" => JWTAuth::fromUser($data), "expires" => "Wed");
-            $data["token"] = $token;
-            return response()->json($data);
+            try {
+                $json = $req->json()->all();
+                $user = $json["user"];
+                $pswd = hash("sha256", $json["password"]);
+                $query = User::whereRaw("(email='{$user}' OR username='{$user}') AND password='{$pswd}'");
+                $user = $query->first();
+                if (!$user){
+                    return response()->json("Verifique os dados novamente",400);
+                }
+                $user->setHidden(["id","created_at","updated_at","password", "remember_token"]);
+                $token = ["data" => JWTAuth::fromUser($user), "expires" => 300];
+                $data = [ "user" => $user, "token" => $token ];
+                return response()->json($data);
+            }
+            catch(QueryException $e) {
+                return response()->json($e,400);
+            }
         }
     }
     // Método pra testar a gereção de token
-    public function getToken(Request $req, $id)
+    public function byToken(Request $req, $token)
     {
-        return response()->json(JWTAuth::fromUser(User::where("id", $id)->first()),200);
+        try {
+            $user = JWTAuth::toUser($token);
+            return response()->json($user,200);
+        }
+        catch(TokenInvalidException $e){
+            return response()->json("O token fornecido é inválido",400);
+        }
+        catch(JWTException $e){
+
+        }
     }
 }

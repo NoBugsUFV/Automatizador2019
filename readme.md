@@ -103,7 +103,7 @@ no `body` da requisição
 
 Retorna todas as funcionalidades cadastradas no sistema.
 
-``GET /api/login`
+``POST /api/login`
 
 Para fazer o login, é necessário fornecer os dados abaixo:
 
@@ -128,7 +128,6 @@ Caso o login seja bem sucedido, a API retorna os seguintes dados:
 }
 ```
 
-**`GET /api/token/{id}`**
+**`GET /api/token/{token}`**
 
-Retorna o `token` de um usuário através do id. Deve ser usada para recuperar o token
-e realizar as requisições manualmente.
+Retorna um usuário através do token.
